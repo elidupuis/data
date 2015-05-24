@@ -133,6 +133,8 @@ if (env === 'production'){
   testFiles = es3SafeRecast(testFiles);
 }
 
+testFiles = babel(testFiles, babelOptions);
+
 testFiles = concat(testFiles, {
   inputFiles: ['**/*.js'],
   separator: '\n',
